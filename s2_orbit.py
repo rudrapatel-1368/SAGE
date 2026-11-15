@@ -1,5 +1,6 @@
 #From the paper of The GRAVITY Collaboration
 import math as m
+import matplotlib.pyplot as plt 
 
 M = 4.154e6
 a_arcsecs = 0.125072
@@ -42,3 +43,12 @@ for i in range(steps):
 print("v_far =", v_far)
 print("end:", x, y)
 print("closest:", r_min)
+
+plt.plot(xs, ys)
+plt.plot(0, 0, "ko")
+plt.gca().set_aspect("equal")
+plt.title("S2 orbit around Sgr A*")
+plt.xlabel("x (AU)")
+plt.ylabel("y (AU)")
+plt.savefig("s2_orbit.png", dpi=200)
+plt.show()
